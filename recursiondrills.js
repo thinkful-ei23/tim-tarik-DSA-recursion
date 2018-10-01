@@ -13,8 +13,8 @@ countSheep(3);
 
 //Array Double
 
-// Write a function that takes an array as input which 
-// contains an unknown set of numbers, and outputs an array with 
+// Write a function that takes an array as input which
+// contains an unknown set of numbers, and outputs an array with
 // each input value doubled. Test your solution by trying a handful of different arrays.
 // For example:
 //  Input: [1, 2, 3]
@@ -24,9 +24,30 @@ function arrayDouble(arr) {
     return [];
   }
 
-  let num = arr[0]*2;
-  return [ num, ...arrayDouble(arr.slice(1))];
+  let num = arr[0] * 2;
+  return [num, ...arrayDouble(arr.slice(1))];
 }
 
 console.log(arrayDouble([1, 2, 3]));
 
+// Reverse String
+// Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
+//recursive
+
+// function reverseString(str, rev = '') {
+//   if (str.length === 0) {
+//     return rev;
+//   }
+//   rev += str[str.length - 1];
+//   console.log(rev);
+//   return reverseString(str.slice(0, str.length - 1), rev);
+// }
+// console.log(reverseString('two'));
+
+function reverseString(string) {
+  if (string.length <= 0) {
+    return '';
+  }
+  return string.slice(-1) + reverseString(string.slice(0, -1));
+}
+console.log(reverseString('two'));
