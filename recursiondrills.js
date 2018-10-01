@@ -30,6 +30,8 @@ function arrayDouble(arr) {
 
 console.log(arrayDouble([1, 2, 3]));
 
+
+
 // Reverse String
 // Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
 //recursive
@@ -43,7 +45,6 @@ console.log(arrayDouble([1, 2, 3]));
 //   return reverseString(str.slice(0, str.length - 1), rev);
 // }
 // console.log(reverseString('two'));
-
 function reverseString(string) {
   if (string.length <= 0) {
     return '';
@@ -51,3 +52,25 @@ function reverseString(string) {
   return string.slice(-1) + reverseString(string.slice(0, -1));
 }
 console.log(reverseString('two'));
+
+
+
+// nth Triangular Number
+
+// Calculates the nth triangular number. A triangular number counts the objects that 
+// can form an equilateral triangle. The nth triangular number is the number of dots 
+// composing a triangle with n dots on a side, and is equal to the sum of the n natural 
+// numbers from 1 to n. This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
+
+// n = 1  seq = 1;
+// n = 2 seq = 2 + 1
+// n = 3 seq =  3 + 2 + 1
+// n = 4 num = 4 + 3 + 2 + 1
+function nth(n) {
+  if (n === 0) {
+    return 0;
+  }
+  return n + nth(n - 1);
+}
+
+console.log(nth(4));
