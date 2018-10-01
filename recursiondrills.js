@@ -36,6 +36,17 @@ function arrayDouble(arr) {
 
 console.log(arrayDouble([1, 2, 3]));
 
+function arrayDoubleIt(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  return arr.map(num => num*2);
+}
+
+console.log(arrayDoubleIt([1, 2, 3]));
+
+
 // Reverse String
 // Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
 //recursive
