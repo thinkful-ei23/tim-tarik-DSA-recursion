@@ -65,7 +65,7 @@ function reverseString(string) {
   }
   return string.slice(-1) + reverseString(string.slice(0, -1));
 }
-console.log(reverseString(''));
+console.log(reverseString('two'));
 
 // iterative
 function reverseStringIt(str) {
@@ -75,7 +75,7 @@ function reverseStringIt(str) {
     .join('');
   return newStr;
 }
-console.log(reverseStringIt(''));
+console.log(reverseStringIt('two'));
 
 // nth Triangular Number
 
@@ -96,6 +96,16 @@ function nth(n) {
 }
 
 console.log(nth(4));
+
+function nthIt(n) {
+  let retNum = 0;
+  for (let i = n; i > 0; i--) {
+    retNum += i;
+  }
+  return retNum;
+}
+
+console.log(nthIt(4));
 
 // String Splitter
 // Split a string based upon a separator (similar to String.prototype.split).
