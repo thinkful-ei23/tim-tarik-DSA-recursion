@@ -30,8 +30,6 @@ function arrayDouble(arr) {
 
 console.log(arrayDouble([1, 2, 3]));
 
-
-
 // Reverse String
 // Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
 //recursive
@@ -53,13 +51,11 @@ function reverseString(string) {
 }
 console.log(reverseString('two'));
 
-
-
 // nth Triangular Number
 
-// Calculates the nth triangular number. A triangular number counts the objects that 
-// can form an equilateral triangle. The nth triangular number is the number of dots 
-// composing a triangle with n dots on a side, and is equal to the sum of the n natural 
+// Calculates the nth triangular number. A triangular number counts the objects that
+// can form an equilateral triangle. The nth triangular number is the number of dots
+// composing a triangle with n dots on a side, and is equal to the sum of the n natural
 // numbers from 1 to n. This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
 
 // n = 1  seq = 1;
@@ -74,3 +70,25 @@ function nth(n) {
 }
 
 console.log(nth(4));
+
+// String Splitter
+// Split a string based upon a separator (similar to String.prototype.split).
+
+function stringSplit(str, separator) {
+  if (str.length === 0) {
+    return [];
+  }
+  if (str.indexOf(separator) === -1) {
+    return [str];
+  }
+  if (separator === '') {
+    return [str[0], ...stringSplit(str.slice(1), separator)];
+  }
+
+  return [
+    str.slice(0, str.indexOf(separator)),
+    ...stringSplit(str.slice(str.indexOf(separator) + 1), separator)
+  ];
+}
+console.log(stringSplit('A sheep jumped over the fence', ''));
+console.log(stringSplit('', ''));
