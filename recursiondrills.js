@@ -93,15 +93,13 @@ function stringSplit(str, separator) {
 console.log(stringSplit('A sheep jumped over the fence', ''));
 console.log(stringSplit('', ''));
 
-
-
 function binaryRep(num) {
   if (num === 0) {
     return '';
   }
 
-  const binary = Math.floor(num%2);
-  return binaryRep(Math.floor(num/2)) + binary;
+  const binary = Math.floor(num % 2);
+  return binaryRep(Math.floor(num / 2)) + binary;
 }
 
 console.log(25);
@@ -110,7 +108,20 @@ function factorial(num) {
   if (num === 1) {
     return 1;
   }
-  return num * factorial(num-1);
+  return num * factorial(num - 1);
 }
 
 console.log(factorial(4));
+
+// Write a recursive function that prints the fibonacci sequence of a given number.
+
+function fibb(num) {
+  if (num === 0) {
+    return 0;
+  }
+  if (num === 1) {
+    return 1;
+  }
+  return fibb(num - 1) + fibb(num - 2);
+}
+console.log(fibb(7));
