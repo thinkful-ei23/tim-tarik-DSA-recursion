@@ -125,3 +125,65 @@ function fibb(num) {
   return fibb(num - 1) + fibb(num - 2);
 }
 console.log(fibb(7));
+
+
+
+function anagram(str) {
+  if (str.length === 0) {
+    return [];
+  }
+  else if (str.length === 1) {
+    return [str];
+  }
+
+}
+
+const facebookEmployees = [
+{id:'Zuckerberg', boss: null}, 
+{id:'Schrepher', boss:'Zuckerberg'},
+{id:'Schrage', boss:'Zuckerberg'},
+{id:'Sandberg', boss:'Zuckerberg'},
+{id:'Bosworth', boss:'Schrepher' },
+{id:'Zhao', boss:'Schrepher'},
+{id:'VanDyck', boss:'Schrage'},
+{id:'Swain', boss:'Schrage'},
+{id:'Goler', boss:'Sandberg'},
+{id:'Hernandez', boss:'Sandberg'},
+{id:'Moissinac', boss:'Sandberg'},
+{id:'Kelley', boss:'Sandberg'},
+{id:'Steve', boss:'Bosworth'},
+{id:'Kyle', boss:'Bosworth'},
+{id:'Andra', boss:'Bosworth'},
+{id:'Richie', boss:'Zhao'},
+{id:'Sofia', boss:'Zhao'},
+{id:'Jen', boss:'Zhao'},
+{id:'Sabrina', boss:'VanDyck'},
+{id:'Michelle', boss:'VanDyck'},
+{id:'Josh', boss:'VanDyck'},
+{id:'Blanch', boss:'Swain'},
+{id:'Tom', boss:'Swain'},
+{id:'Joe', boss:'Swain'},
+{id:'Eddie', boss:'Goler'},
+{id:'Julie', boss:'Goler'},
+{id:'Annie', boss:'Goler'},
+{id:'Rowi', boss:'Hernandez'},
+{id:'Inga', boss:'Hernandez'},
+{id:'Morgan', boss:'Hernandez'},
+{id:'Amy', boss:'Moissinac'},
+{id:'Chuck', boss:'Moissinac'},
+{id:'Vinni', boss:'Moissinac'},
+{id:'Eric', boss:'Kelley'},
+{id:'Ana', boss:'Kelley'},
+{id:'Wes', boss:'Kelley'}
+]
+
+function employeeTree(facebookEmployees, boss) {
+  let node = {};
+  facebookEmployees
+    .filter(employee => employee.boss === boss)
+    .forEach(employee => node[employee.id] = employeeTree(facebookEmployees, employee.id));
+  
+  return node;
+}
+
+console.log(JSON.stringify(employeeTree(facebookEmployees, null), null, 2));
