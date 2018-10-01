@@ -41,11 +41,10 @@ function arrayDoubleIt(arr) {
     return [];
   }
 
-  return arr.map(num => num*2);
+  return arr.map(num => num * 2);
 }
 
 console.log(arrayDoubleIt([1, 2, 3]));
-
 
 // Reverse String
 // Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
@@ -66,7 +65,17 @@ function reverseString(string) {
   }
   return string.slice(-1) + reverseString(string.slice(0, -1));
 }
-console.log(reverseString('two'));
+console.log(reverseString(''));
+
+// iterative
+function reverseStringIt(str) {
+  const newStr = str
+    .split('')
+    .reverse()
+    .join('');
+  return newStr;
+}
+console.log(reverseStringIt(''));
 
 // nth Triangular Number
 
