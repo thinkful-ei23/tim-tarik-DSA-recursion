@@ -10,3 +10,23 @@ function countSheep(num) {
   return countSheep(num - 1);
 }
 countSheep(3);
+
+//Array Double
+
+// Write a function that takes an array as input which 
+// contains an unknown set of numbers, and outputs an array with 
+// each input value doubled. Test your solution by trying a handful of different arrays.
+// For example:
+//  Input: [1, 2, 3]
+//  Output: [2, 4, 6]
+function arrayDouble(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  let num = arr[0]*2;
+  return [ num, ...arrayDouble(arr.slice(1))];
+}
+
+console.log(arrayDouble([1, 2, 3]));
+
