@@ -92,3 +92,16 @@ function stringSplit(str, separator) {
 }
 console.log(stringSplit('A sheep jumped over the fence', ''));
 console.log(stringSplit('', ''));
+
+
+
+function binaryRep(num) {
+  if (num === 0) {
+    return '';
+  }
+
+  const binary = Math.floor(num%2);
+  return binaryRep(Math.floor(num/2)) + binary;
+}
+
+console.log(25);
